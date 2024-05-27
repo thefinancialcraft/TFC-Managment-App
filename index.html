@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take a Selfie</title>
+    <link rel="icon" type="image/png" href="camera.gif">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="attandnace-system">
+    
+        <div class="nav-bar text">
+        <div id="company-title">
+            <h4>- Project Prototype -</h4>
+            <h1>THE FINANCIAL CRAFT</h1>
+            <h3>Attendance System</h3>
+        </div>  
+            <div id="admin-login"><i class="fi fi-sr-admin-alt"></i></div>
+        </div>
+        <div class="container">
+              <div class="Welcome-box box">
+            <div id="welcome-text">
+                <div id="time-date">
+                    <div id="time"></div>
+                    <div id="date"></div>
+                </div>
+                <div id="welcome-message"><p>Welcome to </p><h1 id="company-name"></h1></div>
+            </div>
+            <div id="user-idcard">
+               <div id="user-greet"></div>
+               <div id="idcard">
+                <div class="blank"></div>
+                <div class="user-details">
+                    <div class="username"><span id="username-span"><h2 id="username"></h2></span></div>
+                    <div class="Employe Id details details-style">Employe ID :<span class="span" id="Employe-Id"></span></div>
+                    <div class="Blood-Group details details-style">Blood Group :<span class="span" id="Blood-Group"></span></div>
+                    <div class="Emg. Contact details details-style">Emg. Contact :<span class="span" id="Emg-Contact"></span></div>
+
+                </div>
+               </div>
+               <img id="prf-pic" src="" alt=""></div>
+              </div>
+              <div class="attandance-part">
+            <div class="text">
+                
+                <div id="message">
+                    <img src="camera.gif" width="300px" alt="camera">
+                    <p>Login Your Account</p>
+                    <p>To Mark Your Attendance</p>
+                </div>
+            </div>
+            <div id="video-container" style="display:none;">
+                <video id="video" width="640" height="480" autoplay></video>
+                <img id="snapshot" width="640" height="480" style="display:none;">
+            </div>
+            <div id="controls">
+                <div class="user-id dropdown-container">
+                    <input list="user-id-options" id="user-id" name="user-id" placeholder="Select User" autocomplete="off">
+                    <div id="dropdown-options" class="dropdown-options"></div>
+                </div>
+                <div class="buttons">
+                    <button id="start">LOGIN</button>
+                    <button id="capture" style="display:none;">REACHED</button>
+                    <button id="logout" style="display:none;">LOGOUT</button>
+                </div>
+            </div>
+            <a id="downloadLink" download="selfie.png" style="display:none;">Download</a>
+              </div>
+              <div class="Attandance-record box">
+            <div class="Ad-text">ENTRY RECORD</div>
+            <div class="table-container">
+                <table id="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Entry Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendance-table-body"></tbody>
+                </table>
+            </div>
+            <div class="attandance-footer-btn">
+            <button id="reset">Reset</button>
+            <button id="daily-record">Download</button>
+            </div>
+              </div>
+        </div>
+        <div id="admin-control">
+            <div class="admin-controls-buttons">
+                <span class="user-details-text">User's Registration Details</span>
+                <div class="controls-btn">
+                    <button class="adm-btn" id="add-new">Add New</button>
+                    <button class="adm-btn" id="remove-user">Remove User</button>
+                    <button class="adm-btn" id="data-reset">Reset</button>
+                    <button class="adm-btn" id="display-exit">Exit</button>
+                    
+                </div>
+            </div>
+            <div class="display-style" id="adduser-display">
+                <input type="text" class="display-opn-style" id="user-name" name="user-name" placeholder="User Name" autocomplete="off">
+                <input type="text" class="display-opn-style" id="user-employe-id" name="user-employe-id" placeholder="Employee ID" autocomplete="off">
+                <input type="text" class="display-opn-style bg-grp" id="bld-grp" name="Blood-Group" placeholder="Blood Group" autocomplete="off">
+                <input type="text" class="display-opn-style"  id="Emg-contact" name="Emg-contact" placeholder="Emergency Contact" autocomplete="off">
+                <label for="profile-pic" class="custom-file-upload">Upload Pic</label>
+                <input type="file" id="profile-pic" name="profile-pic" accept="image/*">
+                <button id="adduser">Add User</button>
+
+            </div>
+            
+            <div class="display-style" id="removeuser-display">
+                <input class="display-opn-style" id="IDtoremove" name="user-employe-id" placeholder="Employee ID" autocomplete="off">
+                <button id="removeID">Remove</button>
+
+            </div>
+            <div class="display-style" id="table-container">
+                <table id="user-table">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>     
+                            <th>Employee ID</th>
+                            <th>Blood Group</th>
+                            <th>Emergency Contact</th>
+                            <th>Profile Pic</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- User rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        
+</div>
+    
+
+    <script src="script.js" defer></script>
+</body>
+</html>
