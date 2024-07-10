@@ -23,9 +23,21 @@
     </style>
 </head>
 <body>
-   <iframe src="https://script.google.com/macros/s/AKfycbxoOmRMOhcCgpnpEI4SUsmM1UdabnlB-Mx0UJ7RUl6ZUjpDQLxei1f5c7Kqm4okBWyh/exec" 
+   <iframe id="appFrame" src="https://script.google.com/macros/s/AKfycbxoOmRMOhcCgpnpEI4SUsmM1UdabnlB-Mx0UJ7RUl6ZUjpDQLxei1f5c7Kqm4okBWyh/exec" 
            sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation" 
            allow="allow-downloads">
    </iframe>
+
+   <script>
+       window.addEventListener('message', function(event) {
+           if (event.data && event.data.downloadLink) {
+               // Create an anchor element and trigger the download
+               var anchor = document.createElement('a');
+               anchor.href = event.data.downloadLink;
+               anchor.download = 'RangePDF.pdf'; // The name can be dynamic if needed
+               anchor.click();
+           }
+       });
+   </script>
 </body>
 </html>
