@@ -29,9 +29,10 @@
    </iframe>
 
    <script>
-       function downloadPDF(downloadLink) {
-           const iframe = document.getElementById('appFrame');
-           iframe.src = downloadLink;
+       // Function to handle download initiation from web app
+       function initiateDownload(downloadLink) {
+           // Display the download link or navigate to it
+           window.location.href = downloadLink;
        }
    </script>
 </body>
