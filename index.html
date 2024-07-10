@@ -29,15 +29,10 @@
    </iframe>
 
    <script>
-       window.addEventListener('message', function(event) {
-           if (event.data && event.data.downloadLink) {
-               // Create an anchor element and trigger the download
-               var anchor = document.createElement('a');
-               anchor.href = event.data.downloadLink;
-               anchor.download = 'RangePDF.pdf'; // The name can be dynamic if needed
-               anchor.click();
-           }
-       });
+       function downloadPDF(downloadLink) {
+           const iframe = document.getElementById('appFrame');
+           iframe.src = downloadLink;
+       }
    </script>
 </body>
 </html>
