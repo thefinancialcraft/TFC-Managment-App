@@ -27,38 +27,5 @@
            sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation" 
            allow="allow-downloads">
    </iframe>
-
-   <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('dndfrpt').addEventListener('click', function() {
-                createAndDownloadPDF('B2:R194', 'Full_Report');
-            });
-
-            document.getElementById('dndscrcd').addEventListener('click', function() {
-                createAndDownloadPDF('B2:R22', 'Score_Card');
-            });
-
-            document.getElementById('dndagntscr').addEventListener('click', function() {
-                createAndDownloadPDF('B2:E22', 'Agent_Score');
-            });
-
-            function createAndDownloadPDF(range, reportType) {
-                google.script.run
-                    .withSuccessHandler(function(downloadLink) {
-                        if (downloadLink) {
-                            var iframe = document.getElementById('appFrame');
-                            iframe.contentWindow.postMessage(downloadLink, '*');
-                        } else {
-                            alert('Failed to create PDF. Please try again.');
-                        }
-                    })
-                    .withFailureHandler(function(error) {
-                        console.error('Error:', error.message);
-                        alert('Failed to create PDF. Please check the logs.');
-                    })
-                    .createPDFAndUpload(range, reportType);
-            }
-        });
-   </script>
 </body>
 </html>
